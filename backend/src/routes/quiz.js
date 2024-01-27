@@ -53,6 +53,25 @@ router.get("/:id/impression", async (req, res, next) => {
   }
 });
 
+router.post("/:id/impression", authorizer, async (req, res, next) => {
+  try {
+    const impression = await Impression.findOneAndUpdate(
+      {
+        quizId: req.params.id,
+      },
+      {
+        count: { $inc: 1 },
+      },
+      {
+        upsert: true,
+      }
+    );
+    res.send(impression);
+  } catch (error) {
+    next(error);
+  }
+});
+
 router.get("/:id/analytics", async (req, res, next) => {
   try {
     const analytics = await Analytic.find({ quizId: req.params.id });
