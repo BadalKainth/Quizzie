@@ -1,12 +1,12 @@
-import { useState } from "react";
-import classes from "./CreateQuizModal.module.css";
+import { useState } from 'react'
+import classes from './CreateQuizModal.module.css'
 
 export default function CreateQuizModal() {
-  const [quizType, setQuizType] = useState("poll");
+  const [quizType, setQuizType] = useState('poll')
 
-  const [currentStep, setCurrentStep] = useState(0);
+  const [currentStep, setCurrentStep] = useState(0)
 
-  event.preventDefault();
+  event.preventDefault()
   return (
     <>
       {currentStep === 0 && (
@@ -20,10 +20,10 @@ export default function CreateQuizModal() {
                 id="qna-btn"
                 name="quizType"
                 value="qna"
-                checked={quizType === "qna"}
+                checked={quizType === 'qna'}
                 onChange={(e) => setQuizType(e.target.value)}
               />
-              <label for="qna-btn" onClick={() => setQuizType("qna")}>
+              <label for="qna-btn" onClick={() => setQuizType('qna')}>
                 Q&A
               </label>
 
@@ -32,10 +32,10 @@ export default function CreateQuizModal() {
                 id="poll-btn"
                 name="quizType"
                 value="poll"
-                checked={quizType === "poll"}
+                checked={quizType === 'poll'}
                 onChange={(e) => setQuizType(e.target.value)}
               />
-              <label for="poll-btn" onClick={() => setQuizType("poll")}>
+              <label for="poll-btn" onClick={() => setQuizType('poll')}>
                 Poll
               </label>
             </div>
@@ -117,7 +117,7 @@ export default function CreateQuizModal() {
                   name="timerType"
                   value="TimerOff"
                 />
-                <label for="timerOff-btn" style={{ fontSize: "0.9rem" }}>
+                <label for="timerOff-btn" style={{ fontSize: '0.9rem' }}>
                   OFF
                 </label>
               </div>
@@ -128,7 +128,7 @@ export default function CreateQuizModal() {
                   name="timerType"
                   value="5secTimer"
                 />
-                <label for="5secTimer-btn" style={{ fontSize: "0.9rem" }}>
+                <label for="5secTimer-btn" style={{ fontSize: '0.9rem' }}>
                   5 sec
                 </label>
               </div>
@@ -139,7 +139,7 @@ export default function CreateQuizModal() {
                   name="timerType"
                   value="10secTimer"
                 />
-                <label for="10secTimer-btn" style={{ fontSize: "0.9rem" }}>
+                <label for="10secTimer-btn" style={{ fontSize: '0.9rem' }}>
                   10 sec
                 </label>
               </div>
@@ -152,5 +152,5 @@ export default function CreateQuizModal() {
         </div>
       )}
     </>
-  );
+  )
 }
