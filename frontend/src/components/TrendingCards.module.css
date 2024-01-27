@@ -1,0 +1,35 @@
+.TrendingCard {
+  display: flex;
+  flex-direction: column;
+  width: 18rem;
+  height: 5rem;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 2rem;
+  border-radius: 0.7rem;
+  padding: 1rem;
+}
+
+.TrendingOn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.TrendingOn h3 {
+  font-size: 2rem;
+  line-height: 0rem;
+}
+
+.TrendingOn span {
+  color: rgb(255, 94, 35);
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+p {
+  margin: 0;
+  color: rgb(9, 209, 3);
+  font-size: 1.2rem;
+  font-weight: 500;
+}

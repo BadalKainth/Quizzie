@@ -1,0 +1,42 @@
+.Navbar {
+  display: flex;
+  justify-content: center;
+  width: 23rem;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  left: 0;
+  height: 100%;
+}
+
+.NavbarContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem;
+}
+
+.Navbar h2 {
+  font-size: 4rem;
+  line-height: 0.5;
+  font-family: Jomhuria;
+  letter-spacing: 0em;
+  font-weight: 700;
+}
+
+.NavLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.NavbarBtn {
+  font-size: 2rem;
+  font-weight: 600;
+  color: black;
+  background-color: rgb(248, 248, 248);
+  border-radius: 0.5rem;
+  border: none;
+  padding: 0.4rem;
+  box-shadow: 1px 1px rgb(224, 224, 224);
+  text-decoration: none;
+}

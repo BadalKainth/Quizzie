@@ -1,0 +1,22 @@
+.AnalyticsScreen {
+  display: flex;
+}
+
+.AnalyticsTable {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 7rem auto auto 25rem;
+}
+
+.QuizHeaders {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 70%;
+  background-color: rgb(93, 93, 214);
+  padding: 0 2rem;
+  border-radius: 1rem;
+  color: white;
+}
