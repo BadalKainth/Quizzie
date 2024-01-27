@@ -15,30 +15,37 @@ const optionSchema = new mongoose.Schema({
 const questionSchema = new mongoose.Schema({
   text: {
     type: String,
+    required: true,
   },
   type: {
     type: String,
+    required: true,
   },
   correctOption: {
     type: Number,
   },
   options: {
     type: [optionSchema],
+    required: true,
   },
 });
 
 const quizSchema = new mongoose.Schema({
   userId: {
     type: mongoose.Schema.ObjectId,
+    required: true,
   },
   name: {
     type: String,
+    required: true,
   },
   type: {
     type: String,
+    required: true,
   },
   questions: {
     type: [questionSchema],
+    required: true,
   },
 });
 
