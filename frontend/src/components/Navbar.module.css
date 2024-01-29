@@ -3,9 +3,6 @@
   justify-content: center;
   width: 23rem;
   background-color: rgb(255, 255, 255);
-  position: absolute;
-  left: 0;
-  height: 100%;
 }
 
 .NavbarContent {

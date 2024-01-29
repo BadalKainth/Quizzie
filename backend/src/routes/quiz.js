@@ -35,6 +35,79 @@ router.get("/", authorizer, async (req, res, next) => {
   }
 });
 
+router.get("/trending", authorizer, async (req, res, next) => {
+  try {
+    const userId = req.auth.userId;
+    // Find quizzes with impression greater than 100
+    const quizzes = await Impression.aggregate([
+      {
+        $match: {
+          userId: toObjectId(userId),
+          count: { $gt: 100 },
+        },
+      },
+      {
+        $lookup: {
+          from: "quizzies",
+          localField: "quizId",
+          foreignField: "_id",
+          as: "quiz",
+        },
+      },
+      {
+        $unwind: "$quiz",
+      },
+      {
+        $project: {
+          quiz: 1,
+          count: 1,
+        },
+      },
+    ]);
+    res.send(quizzes);
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.get("/stats", authorizer, async (req, res, next) => {
+  try {
+    const userId = req.auth.userId;
+    const quizzes = await Quiz.find({
+      userId,
+    });
+
+    const totalQuizzes = quizzes.length;
+    const totalQuestions = quizzes.reduce(
+      (acc, quiz) => acc + quiz.questions.length,
+      0
+    );
+    const totalImpressions = await Impression.aggregate([
+      {
+        $match: {
+          userId: toObjectId(userId),
+        },
+      },
+      {
+        $group: {
+          _id: null,
+          count: {
+            $sum: "$count",
+          },
+        },
+      },
+    ]);
+
+    res.send({
+      totalQuizzes,
+      totalQuestions,
+      totalImpressions: totalImpressions[0]?.count || 0,
+    });
+  } catch (error) {
+    next(error);
+  }
+});
+
 router.get("/:id", async (req, res, next) => {
   try {
     const quiz = await Quiz.findById(req.params.id);
@@ -55,12 +128,14 @@ router.get("/:id/impression", async (req, res, next) => {
 
 router.post("/:id/impression", authorizer, async (req, res, next) => {
   try {
+    const userId = req.auth.userId;
     const impression = await Impression.findOneAndUpdate(
       {
-        quizId: req.params.id,
+        quizId: toObjectId(req.params.id),
       },
       {
-        count: { $inc: 1 },
+        $inc: { count: 1 },
+        userId: toObjectId(userId),
       },
       {
         upsert: true,

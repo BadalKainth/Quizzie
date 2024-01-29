@@ -1,29 +1,31 @@
-import classes from "./Navbar.module.css";
-import { Link } from "react-router-dom";
-import Modal from "react-modal";
-import { useState } from "react";
-import CreateQuizModal from "./CreateQuizModal";
+import classes from './Navbar.module.css'
+import { Link } from 'react-router-dom'
+import Modal from 'react-modal'
+import { useState } from 'react'
+import CreateQuizModal from './CreateQuizModal'
+import { useAuth } from '../hooks/auth'
 
 const customStyles = {
   content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
   },
-};
+}
 
 function NavBar() {
-  const [modalIsOpen, setIsOpen] = useState(false);
+  const [modalIsOpen, setIsOpen] = useState(false)
+  const { setUser } = useAuth()
 
   function openModal() {
-    setIsOpen(true);
+    setIsOpen(true)
   }
 
   function closeModal() {
-    setIsOpen(false);
+    setIsOpen(false)
   }
 
   return (
@@ -34,7 +36,7 @@ function NavBar() {
         style={customStyles}
         contentLabel="Example Modal"
       >
-        <CreateQuizModal />
+        <CreateQuizModal closeModal={closeModal} />
       </Modal>
       <nav className={classes.Navbar}>
         <div className={classes.NavbarContent}>
@@ -50,11 +52,13 @@ function NavBar() {
               Create Quiz
             </button>
           </div>
-          <button className={classes.NavbarBtn}>LOG OUT</button>
+          <button className={classes.NavbarBtn} onClick={() => setUser(null)}>
+            LOG OUT
+          </button>
         </div>
       </nav>
     </>
-  );
+  )
 }
 
-export default NavBar;
+export default NavBar

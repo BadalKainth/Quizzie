@@ -1,26 +1,13 @@
-.DashboardScreen {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 100%;
-  gap: 5rem;
-}
-
 .Dashboard {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  width: 100%;
   gap: 4rem;
-  margin: 7rem auto auto 25rem;
+  padding: 2rem;
 }
 
 .InsightsCards {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 4rem;
 }
 
 .TrendingCardSection {

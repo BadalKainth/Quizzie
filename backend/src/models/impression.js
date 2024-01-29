@@ -4,6 +4,9 @@ const impressionSchema = new mongoose.Schema({
   quizId: {
     type: mongoose.Schema.ObjectId,
   },
+  userId: {
+    type: mongoose.Schema.ObjectId,
+  },
   count: {
     type: Number,
   },

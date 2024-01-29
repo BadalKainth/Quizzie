@@ -1,46 +1,44 @@
-import { useState } from "react";
-import Signup from "./Signup";
-import Login from "./Login";
-import classes from "./Auth.module.css";
+import { useEffect, useState } from 'react'
+import Signup from '../components/Signup'
+import Login from '../components/Login'
+import classes from './Auth.module.css'
+import { useAuth } from '../hooks/auth'
+import { useNavigate } from 'react-router-dom'
 
 function Auth() {
-  const [authType, setAuthType] = useState("signup");
-  event.preventDefault();
+  const [authType, setAuthType] = useState('login')
+  const { user } = useAuth()
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (user) {
+      navigate('/', { replace: true })
+    }
+  }, [user, navigate])
 
   return (
-    <form className={classes.Form}>
+    <div className={classes.Form}>
       <div className={classes.FormContainer}>
         <h1>QUIZZIE</h1>
         <div className={classes.FormType}>
           <button
-            onClick={() => setAuthType("signup")}
+            onClick={() => setAuthType('signup')}
             className={classes.SignupBtn}
           >
             Sign Up
           </button>
           <button
-            onClick={() => setAuthType("login")}
+            onClick={() => setAuthType('login')}
             className={classes.LoginBtn}
+            type="submit"
           >
             Log In
           </button>
         </div>
-        <div className={classes.FormInputs}>
-          {authType === "signup" ? (
-            <>
-              <Signup />
-              <button className={classes.RegisterBtn}>Sign-Up</button>{" "}
-            </>
-          ) : (
-            <>
-              <Login />
-              <button className={classes.RegisterBtn}>LogIn</button>{" "}
-            </>
-          )}
-        </div>
+        {authType === 'signup' ? <Signup /> : <Login />}
       </div>
-    </form>
-  );
+    </div>
+  )
 }
 
-export default Auth;
+export default Auth

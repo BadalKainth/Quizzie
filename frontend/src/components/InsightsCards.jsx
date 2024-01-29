@@ -1,11 +1,11 @@
-import classes from "./insightsCards.module.css";
+import classes from './insightsCards.module.css'
 
-function InsightsCards() {
+function InsightsCards({ name, count }) {
   return (
     <div className={classes.InsightCard}>
-      <h3>11</h3> <span>Quiz Created</span>
+      <h3>{count}</h3> <span>{name}</span>
     </div>
-  );
+  )
 }
 
-export default InsightsCards;
+export default InsightsCards

@@ -1,14 +1,14 @@
-import classes from "./TrendingCards.module.css";
+import classes from './TrendingCards.module.css'
 
-function TrendingCards() {
+function TrendingCards({ name, count, createdAt }) {
   return (
     <div className={classes.TrendingCard}>
       <div className={classes.TrendingOn}>
-        <h3>Quiz 1</h3> <span>667👁️</span>
+        <h3>{name}</h3> <span>{count}👁️</span>
       </div>
-      <p>Created on: 04 Sept, 2023</p>
+      <p>Created on: {new Date(createdAt).toLocaleDateString()}</p>
     </div>
-  );
+  )
 }
 
-export default TrendingCards;
+export default TrendingCards

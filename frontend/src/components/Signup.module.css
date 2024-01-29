@@ -23,3 +23,22 @@ label {
   border: none;
   outline: none;
 }
+
+.FormInputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.RegisterBtn {
+  width: 15rem;
+  height: 3rem;
+  background-color: rgb(108, 190, 223);
+  color: black;
+  font-size: 1.2rem;
+  border: none;
+  font-weight: 600;
+  border-radius: 1rem;
+  margin-top: 2rem;
+}
