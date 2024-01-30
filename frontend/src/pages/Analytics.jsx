@@ -18,7 +18,9 @@ function Analytics() {
   return (
     <Layout>
       <div className={classes.AnalyticsTable}>
-        <h1 style={{ color: 'blue' }}>Quiz Analysis</h1>
+        <h2 style={{ color: 'blue' }} className={classes.ScreenHeader}>
+          Quiz Analysis
+        </h2>
         <br />
         <div className={classes.QuizHeaders}>
           <h3>S.No</h3>
@@ -42,3 +44,4 @@ function Analytics() {
   )
 }
 export default Analytics
+

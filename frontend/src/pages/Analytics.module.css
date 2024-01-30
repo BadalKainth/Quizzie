@@ -5,13 +5,20 @@
   padding: 2rem;
 }
 
+.ScreenHeader {
+  padding: 2rem;
+  font-size: 4rem;
+}
+
 .QuizHeaders {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 70%;
+  width: 80%;
   background-color: rgb(93, 93, 214);
   padding: 0 2rem;
+  gap: 1rem;
   border-radius: 1rem;
   color: white;
 }
+
