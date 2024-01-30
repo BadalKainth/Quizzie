@@ -1,7 +1,6 @@
 .Navbar {
   display: flex;
   justify-content: center;
-  width: 23rem;
   background-color: rgb(255, 255, 255);
 }
 
@@ -27,6 +26,8 @@
 }
 
 .NavbarBtn {
+  display: flex;
+  justify-content: center;
   font-size: 2rem;
   font-weight: 600;
   color: black;
@@ -37,3 +38,4 @@
   box-shadow: 1px 1px rgb(224, 224, 224);
   text-decoration: none;
 }
+

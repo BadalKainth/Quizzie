@@ -13,7 +13,7 @@
 .TrendingCardSection {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: center;
 }
 
 .TrendingCardSection h2 {
@@ -25,3 +25,4 @@
   flex-direction: row;
   gap: 2rem;
 }
+
