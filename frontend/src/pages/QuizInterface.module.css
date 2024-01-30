@@ -1,0 +1,48 @@
+.QuizInterfaceScreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem;
+  gap: 1rem;
+}
+
+.CountTimer {
+  display: flex;
+  flex-direction: row;
+  gap: 24rem;
+}
+
+.Date {
+  color: var(--mainFontColor);
+  font-size: 1.6rem;
+}
+
+.Timer {
+  color: var(--timerColor);
+  font-size: 1.6rem;
+}
+
+.QuizOption {
+  display: flex;
+  flex-direction: row;
+  gap: 8rem;
+  margin-bottom: 2rem;
+}
+
+.OptionBtn {
+  width: 10rem;
+  padding: 1rem;
+  font-size: 1.4rem;
+  background-color: var(--greyColor);
+  color: var(--mainFontColor);
+  border: none;
+  border-radius: 0.3rem;
+}
+
+.NextQuizBtn {
+  width: 10rem;
+  padding: 0.3rem;
+  font-size: 1.4rem;
+  background-color: var(--submitBtn);
+  border: none;
+}

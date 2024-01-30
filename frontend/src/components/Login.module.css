@@ -1,0 +1,49 @@
+.LogInCardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 2rem;
+  font-weight: 600;
+}
+
+.lables {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+label {
+  font-size: 1.5rem;
+}
+
+.FormLabels {
+  display: flex;
+  gap: 2rem;
+}
+
+.FormLabels input {
+  padding: 0.5rem;
+  width: 22rem;
+  background-color: rgb(194, 194, 194);
+  border: none;
+  outline: none;
+}
+
+.FormInputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.RegisterBtn {
+  width: 15rem;
+  height: 3rem;
+  background-color: rgb(108, 190, 223);
+  color: black;
+  font-size: 1.2rem;
+  border: none;
+  font-weight: 600;
+  border-radius: 1rem;
+  margin-top: 2rem;
+}

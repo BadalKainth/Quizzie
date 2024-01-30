@@ -1,13 +1,8 @@
-.AnalyticsScreen {
-  display: flex;
-}
-
 .AnalyticsTable {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  margin: 7rem auto auto 25rem;
+  padding: 2rem;
 }
 
 .QuizHeaders {

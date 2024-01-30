@@ -7,9 +7,6 @@ const optionSchema = new mongoose.Schema({
   url: {
     type: String,
   },
-  maxTime: {
-    type: Number,
-  },
 });
 
 const questionSchema = new mongoose.Schema({
@@ -21,6 +18,9 @@ const questionSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  maxTime: {
+    type: Number,
+  },
   correctOption: {
     type: Number,
   },
@@ -30,24 +30,27 @@ const questionSchema = new mongoose.Schema({
   },
 });
 
-const quizSchema = new mongoose.Schema({
-  userId: {
-    type: mongoose.Schema.ObjectId,
-    required: true,
+const quizSchema = new mongoose.Schema(
+  {
+    userId: {
+      type: mongoose.Schema.ObjectId,
+      required: true,
+    },
+    name: {
+      type: String,
+      required: true,
+    },
+    type: {
+      type: String,
+      required: true,
+    },
+    questions: {
+      type: [questionSchema],
+      required: true,
+    },
   },
-  name: {
-    type: String,
-    required: true,
-  },
-  type: {
-    type: String,
-    required: true,
-  },
-  questions: {
-    type: [questionSchema],
-    required: true,
-  },
-});
+  { timestamps: true }
+);
 
 const Quiz = mongoose.model("quizzies", quizSchema);
 

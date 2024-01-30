@@ -3,13 +3,13 @@ const { z } = require("zod");
 const optionInput = z.object({
   text: z.string().optional(),
   url: z.string().url().optional(),
-  maxTime: z.number().optional(),
 });
 
 const questionInput = z.object({
   text: z.string(),
   type: z.string(),
-  correctOption: z.number(),
+  maxTime: z.number().optional(),
+  correctOption: z.number().optional(),
   options: z.array(optionInput),
 });
 

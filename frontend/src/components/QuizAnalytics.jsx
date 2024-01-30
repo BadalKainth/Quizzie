@@ -1,15 +1,20 @@
-import classes from "./QuizAnalytics.module.css";
+import classes from './QuizAnalytics.module.css'
 
-function QuizAnalytics() {
+function QuizAnalytics({
+  index,
+  name,
+  createdAt = Date.now(),
+  impressions = 0,
+}) {
   return (
     <div className={classes.QuizAnalytics}>
-      <h3>S.No</h3>
-      <h3>Quiz Name</h3>
-      <h3>Created on</h3>
-      <h3>Impressions</h3>
+      <h3>{index}</h3>
+      <h3>{name}</h3>
+      <h3>{new Date(createdAt).toLocaleDateString()}</h3>
+      <h3>{impressions}</h3>
       <h3>Hello</h3>
       <h3>Hello</h3>
     </div>
-  );
+  )
 }
-export default QuizAnalytics;
+export default QuizAnalytics
